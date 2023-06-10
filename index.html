@@ -17,19 +17,18 @@
          <div class="list" draggable="true">List Item 6</div> 
          <div class="list" draggable="true">List Item 7</div> 
         </div>
-        
         <div id="right"></div>
-        <Button class="button" Onsubmit()> RESET </Button>
+        <Button type="button"  class="Button" onclick="resetContainers()" id="reset-button"> RESET </Button>
     </div>
     
   
 <script>
+
 let arraylist=document.getElementsByClassName("list");
-console.log(arraylist);
 let rightbox=document.getElementById("right");
-console.log(rightbox);
 let leftbox=document.getElementById("left");
-console.log(leftbox);
+
+// event listeners for drag and drop events
 for(list of arraylist){
     list.addEventListener("dragstart", function(e){
         let selected= e.target;
@@ -45,9 +44,14 @@ for(list of arraylist){
 })
 
 }
+// Reset button function
+resetButton.addEventListener('onclick', resetContainers);
+function resetContainers() 
+  { 
+     window.location.reload();
+      };
+    
 </script>
-
-
 </body>
 </html>
     
